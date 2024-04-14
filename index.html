@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+            <input id="screen" type="text" name="display" readonly>
+            </div>
+            <div id="working">
+                <div>
+                    <button onclick="e(); playClickSound()">e</button>
+                    <button onclick="pi(); playClickSound()">π</button>
+                    <button class="btn" onclick="playClickSound()">%</button>
+                    <button class="orange revin" onclick="screen.value=screen.value.substr(0,screen.value.length-1);working.value=working.value.substr(0,working.value.length-1);if (btn_revin.value!='') btn_revin.value=btn_revin.value.substr(0,btn_revin.value.length-1); playClickSound()">DEL</button>
+                    <button class="orange revin" onclick="screen.value=working.value=btn_revin.value=''; playClickSound()">AC</button>
+                </div>
+                <div>
+                    <button id="sinButton" onclick="sin(); playClickSound()">sin</button>
+                    <button id="cosButton" onclick="cos(); playClickSound()">cos</button>
+                    <button id="tanButton" onclick="tan(); playClickSound()">tan</button>
+                    <button onclick="hyp(); playClickSound()">hyp</button>
+                    <button class="btn" onclick="playClickSound()">exp</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="playClickSound()">x²</button>
+                    <button class="btn" onclick="playClickSound()">x³</button>
+                    <button class="btn" onclick="playClickSound()">∛</button>
+                    <button class="btn" onclick="playClickSound()">√</button>
+                    <button class="btn" onclick="playClickSound()">^</button>
+                </div>
+                <div>
+                    <button onclick="log(); playClickSound()">log</button>
+                    <button onclick="ln(); playClickSound()">ln</button>
+                    <button class="btn" onclick="playClickSound()">(</button>
+                    <button class="btn" onclick="playClickSound()">)</button>
+                    <button class="btn" onclick="playClickSound()">÷</button>
+                </div>
+                <div>
+                    <button class="btn green" onclick="playClickSound()">7</button>
+                    <button class="btn green" onclick="playClickSound()">8</button>
+                    <button class="btn green" onclick="playClickSound()">9</button>
+                    <button onclick="fact(); playClickSound()">x!</button>
+                    <button class="btn" onclick="playClickSound()">×</button>
+                </div>
+                <div>
+                    <button class="btn green" onclick="playClickSound()">4</button>
+                    <button class="btn green" onclick="playClickSound()">5</button>
+                    <button class="btn green" onclick="playClickSound()">6</button>
+                    <button onclick="inv(); playClickSound()">1/x</button>
+                    <button class="btn" onclick="playClickSound()">-</button>
+                </div>
+                <div>
+                    <button class="btn green" onclick="playClickSound()">1</button>
+                    <button class="btn green" onclick="playClickSound()">2</button>
+                    <button class="btn green" onclick="playClickSound()">3</button>
+                    <button onclick="modulus(); playClickSound()">|x|</button>
+                    <button class="btn" onclick="playClickSound()">+</button>
+                </div>
+                <div>
+                    <button class="btn">.</button>
+                    <button class="btn green" onclick="playClickSound()">0</button>
+                    <button onclick="negate(); playClickSound()">±</button>
+                    <button onclick="approx(); playClickSound()">≈</button>
+                    <button class="btn grey" onclick="screen.value=(working.value); playEqualSound()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="clickSound" src="./SOUND/btn_sound.mp3"></audio>
+    <audio id="equalSound" src="./SOUND/equal_btn_sound.mp3"></audio>
+</body>
+<script src="./JS/script.js"></script>
+</html>
